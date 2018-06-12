@@ -10,22 +10,27 @@ public class Main{
         String s ="good";
         String t ="odg";
         String decode = "2[b3[a]]";
-        // sortByStrings(s,t);
+        sortByStrings(s,t);
         decodeString(decode);
+
+        int amount = 4;
+        int[] amount_arr = {1,2,3};
+        changePossibilities(amount,amount_arr);
+
     }
 
     // Question 1
-    // public static void sortByStrings(String s,String t){
-    //     String out = "";
-    //     for (int i = 0; i < t.length(); i++){
-    //         for (int p = 0; p < s.length(); p++){
-    //             if(t.charAt(i) == s.charAt(p)){
-    //                 out += s.charAt(p);
-    //             }
-    //         }
-    //     }
-    //     System.out.println(out);
-    // }
+    public static void sortByStrings(String s,String t){
+        String out = "";
+        for (int i = 0; i < t.length(); i++){
+            for (int p = 0; p < s.length(); p++){
+                if(t.charAt(i) == s.charAt(p)){
+                    out += s.charAt(p);
+                }
+            }
+        }
+        System.out.println(out);
+    }
 
     //Question 2
     public static void decodeString(String h){
@@ -82,4 +87,21 @@ public class Main{
         }
         System.out.println(out);
     }
+
+    public static void changePossibilities(int amount, int[] amount_arr){
+        int[] A = new int[amount + 1];
+
+        for (int i = 0; i < amount_arr.length ; i++ ){
+            for (int p = 0; p < A.length ; p++){
+                if(p == 0){
+                    A[p] = 1;
+                }
+                if(p >= amount_arr[i]){
+                    A[p] += A[p - amount_arr[i]];
+                }
+
+            }
+        }
+        System.out.println(A[amount]);
+     }
 }

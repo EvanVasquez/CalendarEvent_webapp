@@ -47,7 +47,6 @@ public class Q2 {
                 count = A.get(A.size() - 1);
                 count--;
                 A.remove(A.size() - 1);
-                System.out.println(count);
                 while(count > 0){
                     out += temp;
                     count--;
@@ -57,7 +56,6 @@ public class Q2 {
             else{
                 out += h.charAt(i);
                 temp += h.charAt(i);
-                System.out.println(temp);
             }
 
         }
