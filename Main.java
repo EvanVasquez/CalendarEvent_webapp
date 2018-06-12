@@ -38,20 +38,19 @@ public class Main{
 
         for (int i = 0; i < h.length(); i++) {
 
-            // if(i == h.length()-1){
-            //     System.out.println("at the end");
-            //     count = A.get(A.size() - 1);
-            //     count --;
-            //     String newT = out;
-            //     A.remove(A.size() - 1);
-            //
-            //     while(count > 0){
-            //         out += newT;
-            //         count--;
-            //     }
-            //     break;
-            // }
-            if(Character.isDigit(h.charAt(i))){
+            if(i == h.length()-1){
+                count = A.get(A.size() - 1);
+                count --;
+                String newT = out;
+                A.remove(A.size() - 1);
+
+                while(count > 0){
+                    out += newT;
+                    count--;
+                }
+                break;
+            }
+            else if(Character.isDigit(h.charAt(i))){
                 number += h.charAt(i);
             }
             else if( '[' == h.charAt(i)){
@@ -63,35 +62,21 @@ public class Main{
             }
             //&& !stack.isEmpty()
             else if( ']' == h.charAt(i)){
-                System.out.println("at ]");
                 stack.remove(stack.size()-1);
-                if( !A.isEmpty()){
-                    count = A.get(A.size() - 1);
-                    count--;
-                    A.remove(A.size() - 1);
-                    System.out.println(count);
-                }
+                count = A.get(A.size() - 1);
+                count--;
+                A.remove(A.size() - 1);
+                System.out.println(count);
                 while(count > 0){
                     out += temp;
                     count--;
                 }
-                if(stack.isEmpty()){
-                    System.out.println("at the end");
-                    count = A.get(A.size() - 1);
-                    count --;
-                    String newT = out;
-                    while(count > 0){
-                        out += newT;
-                        count--;
-                    }
-                }
-                count = 0;
                 temp = "";
-                A.remove(A.size() - 1);
             }
             else{
                 out += h.charAt(i);
                 temp += h.charAt(i);
+                System.out.println(temp);
             }
 
         }
