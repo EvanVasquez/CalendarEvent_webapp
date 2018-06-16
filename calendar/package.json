@@ -1,0 +1,22 @@
+{
+  "name": "calendar",
+  "version": "1.0.0",
+  "description": "calendar assignment for spotify",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvanVasquez/Spotify_questions.git"
+  },
+  "author": "Evan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EvanVasquez/Spotify_questions/issues"
+  },
+  "homepage": "https://github.com/EvanVasquez/Spotify_questions#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
