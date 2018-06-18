@@ -14,7 +14,8 @@ app.get('/',function(req,res){
 
 app.get('/event',function(req,res){
     var val = req.query.Day;
-    console.log(typeof val);
+    var Day = parseInt(val,10);
+    console.log(typeof Day);
     res.render("eventPage");
 });
 
