@@ -5,7 +5,36 @@
         <title></title>
     </head>
     <body>
-        <h1>Welcome to Events</h1>
+        <%
+        var StrDate = "";
+        for(var i = 0; i < Day.length;i++ ){
+            if(i === 2){
+                StrDate += "/";
+                StrDate += Day.charAt(i);
+            }else{
+                StrDate += Day.charAt(i);
+            }
+        } %>
+        <h1>Enter an event for <%= StrDate %>/2018 </h1>
+
+        <form action="/insetEvent" method="post">
+            <label for="title"> Title </label>
+            <input type="text" name="title"  required>
+
+            <label for="desc"> Description </label>
+            <input type="text" name="desc"  required>
+
+            <label for="start"> Start Time </label>
+            <input type="text" name="start"  required>
+
+            <label for="end"> End Time </label>
+            <input type="text" name="end"  required>
+
+            <button type="submit" name="button"> Submit </button>
+        </form>
+        <form action="/cancel" method="post">
+            <button type="submit" name="button"> Cancel Event </button>
+        </form>
 
     </body>
 </html>
