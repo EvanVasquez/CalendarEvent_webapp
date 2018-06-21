@@ -9,6 +9,7 @@ CREATE DATABASE SpotCalendar;
 USE SpotCalendar;
 
 CREATE TABLE event(
+    id INT PRIMARY KEY AUTO_INCREMENT,
     month INT NOT NULL,
     day INT NOT NULL,
     title VARCHAR(100) NOT NULL,

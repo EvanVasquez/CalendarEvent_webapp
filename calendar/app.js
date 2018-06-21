@@ -31,7 +31,6 @@ app.get('/',function(req,res){
     var q = "SELECT * FROM event WHERE month = " + monTemp + " ORDER BY day" ;
     connection.query(q, function(err, results){
         if(err) throw err;
-        console.log("You got info you needed ! :D");
         var complete = {
             Re: results,
             Month: currentPlace
@@ -47,7 +46,6 @@ app.get('/nextMonth', function(req,res){
     var q = "SELECT * FROM event WHERE month = " + monTemp + " ORDER BY day" ;
     connection.query(q, function(err, results){
         if(err) throw err;
-        console.log("You got info you needed ! :D");
         var complete = {
             Re: results,
             Month: currentPlace
@@ -63,7 +61,6 @@ app.get('/prevMonth', function(req,res){
     var q = "SELECT * FROM event WHERE month = " + monTemp + " ORDER BY day" ;
     connection.query(q, function(err, results){
         if(err) throw err;
-        console.log("You got info you needed ! :D");
         var complete = {
             Re: results,
             Month: currentPlace
@@ -82,6 +79,16 @@ app.get('/event',function(req,res){
 });
 app.post('/cancel', function(req,res){
     res.redirect('/');
+});
+app.post('/removeEvent',function(req,res){
+    var id = req.body.RemoveEvent;
+    console.log(id);
+    var q = "DELETE FROM event WHERE id = " + id;
+    connection.query(q, function(err,results){
+        if(err) throw err;
+        console.log("You deleted the event !");
+        res.redirect('/');
+    });
 });
 
 app.post('/insetEvent', function(req,res){

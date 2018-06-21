@@ -207,6 +207,9 @@
                       <li class="list-group-item"><%= Results.Re[i].title %></li>
                       <li class="list-group-item"><%= Results.Re[i].description %></li>
                       <li class="list-group-item"><%= Results.Re[i].startTime %> - <%= Results.Re[i].endTime %> </li>
+                      <form class="" action="/removeEvent" method="post">
+                          <li class="list-group-item"><button name="RemoveEvent" value="<%= Results.Re[i].id %>">Remove Event</button></li>
+                      </form>
                       <br>
                   </div>
               <% } %>
