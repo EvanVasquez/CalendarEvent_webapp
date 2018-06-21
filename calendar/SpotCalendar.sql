@@ -9,7 +9,8 @@ CREATE DATABASE SpotCalendar;
 USE SpotCalendar;
 
 CREATE TABLE event(
-    day INT PRIMARY KEY,
+    month INT NOT NULL,
+    day INT NOT NULL,
     title VARCHAR(100) NOT NULL,
     description VARCHAR(100) NOT NULL,
     startTime VARCHAR(100),

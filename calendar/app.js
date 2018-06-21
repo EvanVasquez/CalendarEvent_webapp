@@ -8,28 +8,77 @@ app.use(Parser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public")); // Use public folder to access css
 
-var val = "";
+var valDay = "";
 var Day = 0;
+var valMon = "7";
+var Mon = 6;
+
+var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
+
+var currentPlace = "Jul";
 
 var connection = mysql.createConnection({
     host: 'den1.mysql4.gear.host',
     port: 3306,
     user: 'spotcalendar',
-    password: '	Po03_629Lb3_',
-    database: 'compose'
+    password: 'Po03_629Lb3_',
+    database: 'spotcalendar'
 });
-
 
 
 app.get('/',function(req,res){
-    res.render("home");
+    var monTemp = Mon + 1;
+    var q = "SELECT * FROM event WHERE month = " + monTemp + " ORDER BY day" ;
+    connection.query(q, function(err, results){
+        if(err) throw err;
+        console.log("You got info you needed ! :D");
+        var complete = {
+            Re: results,
+            Month: currentPlace
+        }
+        res.render( currentPlace, {Results: complete});
+    });
+});
+
+app.get('/nextMonth', function(req,res){
+    Mon++;
+    currentPlace = months[Mon];
+    var monTemp = Mon + 1;
+    var q = "SELECT * FROM event WHERE month = " + monTemp + " ORDER BY day" ;
+    connection.query(q, function(err, results){
+        if(err) throw err;
+        console.log("You got info you needed ! :D");
+        var complete = {
+            Re: results,
+            Month: currentPlace
+        }
+        res.render( currentPlace, {Results: complete});
+    });
+});
+
+app.get('/prevMonth', function(req,res){
+    Mon--;
+    currentPlace = months[Mon];
+    var monTemp = Mon + 1;
+    var q = "SELECT * FROM event WHERE month = " + monTemp + " ORDER BY day" ;
+    connection.query(q, function(err, results){
+        if(err) throw err;
+        console.log("You got info you needed ! :D");
+        var complete = {
+            Re: results,
+            Month: currentPlace
+        }
+        res.render( currentPlace, {Results: complete});
+    });
 });
 
 app.get('/event',function(req,res){
-    val = req.query.Day;
-    Day = parseInt(val,10);
+    valDay = req.query.Day;
+    Day = parseInt(valDay,10);
     console.log(Day);
-    res.render("eventPage", { Day : val });
+    var some = [valDay,currentPlace];
+
+    res.render("eventPage", {some: some});
 });
 app.post('/cancel', function(req,res){
     res.redirect('/');
@@ -40,8 +89,10 @@ app.post('/insetEvent', function(req,res){
     var desc = req.body.desc;
     var startT = req.body.start;
     var endT = req.body.end;
+    var monTemp = Mon + 1;
 
     var event = {
+        month: monTemp,
         day: Day,
         title: title,
         description: desc,

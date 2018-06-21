@@ -5,30 +5,21 @@
         <title></title>
     </head>
     <body>
-        <%
-        var StrDate = "";
-        for(var i = 0; i < Day.length;i++ ){
-            if(i === 2){
-                StrDate += "/";
-                StrDate += Day.charAt(i);
-            }else{
-                StrDate += Day.charAt(i);
-            }
-        } %>
-        <h1>Enter an event for <%= StrDate %>/2018 </h1>
+
+        <h1>Enter an event for  <%= some[1] %>,<%= some[0] %>,2018 </h1>
 
         <form action="/insetEvent" method="post">
             <label for="title"> Title </label>
             <input type="text" name="title"  required>
 
             <label for="desc"> Description </label>
-            <input type="text" name="desc"  required>
+            <input type="text" name="desc" required>
 
             <label for="start"> Start Time </label>
-            <input type="text" name="start"  required>
+            <input type="text" name="start" placeholder="Ex. '5:00pm'" required>
 
             <label for="end"> End Time </label>
-            <input type="text" name="end"  required>
+            <input type="text" name="end" placeholder="Ex. '6:30pm'" required>
 
             <button type="submit" name="button"> Submit </button>
         </form>
