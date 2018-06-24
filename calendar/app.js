@@ -13,6 +13,7 @@ var Day = 0;
 var valMon = "7";
 var Mon = 6;
 
+
 var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
 
 var currentPlace = "Jul";
@@ -42,31 +43,13 @@ app.get('/',function(req,res){
 app.get('/nextMonth', function(req,res){
     Mon++;
     currentPlace = months[Mon];
-    var monTemp = Mon + 1;
-    var q = "SELECT * FROM event WHERE month = " + monTemp + " ORDER BY day" ;
-    connection.query(q, function(err, results){
-        if(err) throw err;
-        var complete = {
-            Re: results,
-            Month: currentPlace
-        }
-        res.render( currentPlace, {Results: complete});
-    });
+    res.redirect('/');
 });
 
 app.get('/prevMonth', function(req,res){
     Mon--;
     currentPlace = months[Mon];
-    var monTemp = Mon + 1;
-    var q = "SELECT * FROM event WHERE month = " + monTemp + " ORDER BY day" ;
-    connection.query(q, function(err, results){
-        if(err) throw err;
-        var complete = {
-            Re: results,
-            Month: currentPlace
-        }
-        res.render( currentPlace, {Results: complete});
-    });
+    res.redirect('/');
 });
 
 app.get('/event',function(req,res){
@@ -77,18 +60,43 @@ app.get('/event',function(req,res){
 
     res.render("eventPage", {some: some});
 });
+
 app.post('/cancel', function(req,res){
     res.redirect('/');
 });
+
+
 app.post('/removeEvent',function(req,res){
     var id = req.body.RemoveEvent;
-    console.log(id);
     var q = "DELETE FROM event WHERE id = " + id;
     connection.query(q, function(err,results){
         if(err) throw err;
         console.log("You deleted the event !");
         res.redirect('/');
     });
+});
+
+
+app.get('/UpdateP',function(req,res){
+  var id = req.query.Up;
+  var q ="SELECT * FROM event WHERE id = " + id;
+  connection.query(q,function(err,results){
+      if(err) throw err;
+      res.render("UpdateEvent",{Results:results});
+  })
+});
+
+app.post('/Update', function(req,res){
+  var id = req.body.Up;
+  var title = req.body.title;
+  var desc = req.body.desc;
+  var startT = req.body.start;
+  var endT = req.body.end;
+
+  var q = "UPDATE event SET title = "+title +" ,startTime = "+startT +" ,endTime = "+endT +" ,description = " +desc+ " WHERE id = " + id;
+  connection.query(q,function(err,results){
+    if(err) throw err;
+  });
 });
 
 app.post('/insetEvent', function(req,res){

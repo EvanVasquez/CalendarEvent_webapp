@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>You made it to the update event page!</h1>
+
+    <form action="/Update" method="post">
+        <label for="title"> Title </label>
+        <input type="text" name="title"  required>
+
+        <label for="desc"> Description </label>
+        <input type="text" name="desc" required>
+
+        <label for="start"> Start Time </label>
+        <input type="text" name="start" placeholder="Ex. '5:00pm'" required>
+
+        <label for="end"> End Time </label>
+        <input type="text" name="end" placeholder="Ex. '6:30pm'" required>
+
+        <button type="submit" name="button" value="<%= Results[0].id %>" > Submit </button>
+    </form>
+    <form action="/cancel" method="post">
+        <button type="submit" name="button"> Cancel Event </button>
+    </form>
+
+
+    <div class = "row text-center">
+          <div class = "col-md-6 col-sm-6">
+              <li class="list-group-item"><%= Results[0].day %></li>
+              <li class="list-group-item"><%= Results[0].title %></li>
+              <li class="list-group-item"><%= Results[0].description %></li>
+              <li class="list-group-item"><%= Results[0].startTime %> - <%= Results[0].endTime %> </li>
+              <form class="" action="/removeEvent" method="post">
+                  <li class="list-group-item"><button name="RemoveEvent" value="<%= Results[0].id %>">Remove Event</button></li>
+              </form>
+              <br>
+          </div>
+    </div>
+  </body>
+</html>
