@@ -87,15 +87,16 @@ app.get('/UpdateP',function(req,res){
 });
 
 app.post('/Update', function(req,res){
-  var id = req.body.Up;
+  var id = req.body.Uper;
   var title = req.body.title;
   var desc = req.body.desc;
   var startT = req.body.start;
   var endT = req.body.end;
 
-  var q = "UPDATE event SET title = "+title +" ,startTime = "+startT +" ,endTime = "+endT +" ,description = " +desc+ " WHERE id = " + id;
+  var q = "UPDATE event SET title = '"+ title +"',startTime = '" + startT + "' ,endTime = '"+ endT +"' ,description = '" + desc + "' WHERE id = " + id;
   connection.query(q,function(err,results){
     if(err) throw err;
+    res.redirect('/');
   });
 });
 
