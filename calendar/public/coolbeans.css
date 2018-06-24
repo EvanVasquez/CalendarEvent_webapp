@@ -1,0 +1,13 @@
+.centerMe{
+  text-align: center;
+}
+  .buttons{
+    width: 150px;
+    height: 60px;
+    display: inline-block;
+    text-align: left;
+  }
+   .btn-primary-outline{
+    background-color: transparent;
+    border-color: #dddddd;
+  }

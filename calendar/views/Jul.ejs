@@ -3,15 +3,17 @@
     <head>
         <meta charset="utf-8">
         <title></title>
+        <link rel="stylesheet" href="coolbeans.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
     <body>
         <div class="container">
-            <div class="">
+            <div class="jumbotron">
+                <h1 class="centerMe"> <%= Results.Month %> </h1>
+
                 <form action="/prevMonth" method="get">
                     <button type="submit" name="button"> Previous Month </button>
                 </form>
-                <h1> <%= Results.Month %> </h1>
                 <form action="/nextMonth" method="get">
                     <button type="submit" name="button"> Next Month </button>
                 </form>
@@ -19,49 +21,49 @@
 
             <table class="table table-bordered">
                 <thead>
-                    <th>Sun</th>
-                    <th>Mon</th>
-                    <th>Tue</th>
-                    <th>Wed</th>
-                    <th>Thu</th>
-                    <th>Fri</th>
-                    <th>Sat</th>
+                    <th class="centerMe">Sun</th>
+                    <th class="centerMe">Mon</th>
+                    <th class="centerMe">Tue</th>
+                    <th class="centerMe">Wed</th>
+                    <th class="centerMe">Thu</th>
+                    <th class="centerMe">Fri</th>
+                    <th class="centerMe">Sat</th>
                 </thead>
                 <tbody>
                     <tr>
                         <td>
                             <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="01"> 1 </button>
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="01"> 1 </button>
                             </form>
                         </td>
                         <td>
                             <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="02"> 2 </button>
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="02"> 2 </button>
                             </form>
                         </td>
                         <td>
                             <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="03"> 3 </button>
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="03"> 3 </button>
                             </form>
                         </td>
                         <td>
                             <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="04"> 4 </button>
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="04"> 4 </button>
                             </form>
                         </td>
                         <td>
                             <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="05"> 5 </button>
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="05"> 5 </button>
                             </form>
                         </td>
                         <td>
                             <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="06"> 6 </button>
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="06"> 6 </button>
                             </form>
                         </td>
                         <td>
                             <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="07"> 7 </button>
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="07"> 7 </button>
                             </form>
                         </td>
                     </tr>
@@ -69,129 +71,129 @@
                     <tr>
                         <td>
                             <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="08"> 8 </button>
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="08"> 8 </button>
                             </form>
                         </td>
                         <td>
                             <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="09"> 9 </button>
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="09"> 9 </button>
                             </form>
                         </td>
                         <td>
                             <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="10"> 10 </button>
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="10"> 10 </button>
                             </form>
                         </td>
                         <td>
                             <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="11"> 11 </button>
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="11"> 11 </button>
                             </form>
                         </td>
                         <td>
                             <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="12"> 12 </button>
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="12"> 12 </button>
                             </form>
                         </td>
                         <td>
                             <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="13"> 13 </button>
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="13"> 13 </button>
                             </form>
                         </td>
                         <td>
                             <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="14"> 14 </button>
-                            </form>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="15"> 15 </button>
-                            </form>
-                        </td>
-                        <td>
-                            <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="16"> 16 </button>
-                            </form>
-                        </td>
-                        <td>
-                            <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="17"> 17 </button>
-                            </form>
-                        </td>
-                        <td>
-                            <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="18"> 18 </button>
-                            </form>
-                        </td>
-                        <td>
-                            <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="19"> 19 </button>
-                            </form>
-                        </td>
-                        <td>
-                            <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="20"> 20 </button>
-                            </form>
-                        </td>
-                        <td>
-                            <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="21"> 21 </button>
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="14"> 14 </button>
                             </form>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="22"> 22 </button>
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="15"> 15 </button>
                             </form>
                         </td>
                         <td>
                             <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="23"> 23 </button>
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="16"> 16 </button>
                             </form>
                         </td>
                         <td>
                             <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="24"> 24 </button>
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="17"> 17 </button>
                             </form>
                         </td>
                         <td>
                             <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="25"> 25 </button>
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="18"> 18 </button>
                             </form>
                         </td>
                         <td>
                             <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="26"> 26 </button>
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="19"> 19 </button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/event" method="get">
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="20"> 20 </button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/event" method="get">
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="21"> 21 </button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <form action="/event" method="get">
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="22"> 22 </button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/event" method="get">
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="23"> 23 </button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/event" method="get">
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="24"> 24 </button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/event" method="get">
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="25"> 25 </button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/event" method="get">
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="26"> 26 </button>
                             </form>
                         </td>
 
                         <td>
                             <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="27"> 27 </button>
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="27"> 27 </button>
                             </form>
                         </td>
                         <td>
                             <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="28"> 28 </button>
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="28"> 28 </button>
                             </form>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="29"> 29 </button>
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="29"> 29 </button>
                             </form>
                         </td>
                         <td>
                             <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="30"> 30 </button>
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="30"> 30 </button>
                             </form>
                         </td>
                         <td>
                             <form action="/event" method="get">
-                                <button class="buttons" type="submit" name="Day" value="31"> 31 </button>
+                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="31"> 31 </button>
                             </form>
                         </td>
                     </tr>
