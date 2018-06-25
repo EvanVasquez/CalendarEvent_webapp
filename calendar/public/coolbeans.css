@@ -1,6 +1,6 @@
-.centerMe{
-  text-align: center;
-}
+  .centerMe{
+    text-align: center;
+  }
   .buttons{
     width: 150px;
     height: 60px;
@@ -10,4 +10,22 @@
    .btn-primary-outline{
     background-color: transparent;
     border-color: #dddddd;
+  }
+  thead{
+    background-color: #0074D9;
+  }
+  .table{
+    border: 1px solid rgba(207, 210, 211, .8);
+    background-color: rgba(207, 210, 211, .8);
+    border-radius: 4px;
+    box-shadow: 4px 4px grey;
+    height: 100px;
+    line-height: 30px;
+  }
+
+  .fixme{
+    border: 1px solid rgba(207, 210, 211, .8);
+    border-radius: 4px;
+    box-shadow: 4px 4px grey;
+    line-height: 30px;
   }

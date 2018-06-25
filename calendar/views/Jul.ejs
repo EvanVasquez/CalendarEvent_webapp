@@ -197,29 +197,32 @@
                             </form>
                         </td>
                     </tr>
+
                 </tbody>
             </table>
 
-
             <% if (Results.Re[0]) { %>
-            <div class = "row text-center">
-              <% for(var i = 0; i < Results.Re.length; i++){ %>
-                  <div class = "col-md-6 col-sm-6">
-                      <li class="list-group-item"><%= Results.Re[i].day %></li>
-                      <li class="list-group-item"><%= Results.Re[i].title %></li>
-                      <li class="list-group-item"><%= Results.Re[i].description %></li>
-                      <li class="list-group-item"><%= Results.Re[i].startTime %> - <%= Results.Re[i].endTime %> </li>
-                      <form class="" action="/removeEvent" method="post">
-                          <li class="list-group-item"><button name="RemoveEvent" value="<%= Results.Re[i].id %>">Remove Event</button></li>
-                      </form>
-                      <form class="" action="/UpdateP" method="get">
-                          <li class="list-group-item"><button name="Up" value="<%= Results.Re[i].id %>">Update Event</button></li>
-                      </form>
-                      <br>
-                  </div>
-              <% } %>
-            </div>
+              <table>
+                <div class = "row text-center">
+                  <% for(var i = 0; i < Results.Re.length; i++){ %>
+                      <div class = "col-md-6 col-sm-6">
+                          <p class="list-group-item fixme"><%= Results.Re[i].day %></p>
+                          <p class="list-group-item fixme"><%= Results.Re[i].title %></p>
+                          <p class="list-group-item fixme"><%= Results.Re[i].description %></p>
+                          <p class="list-group-item fixme"><%= Results.Re[i].startTime %> - <%= Results.Re[i].endTime %> </p>
+                          <form class="" action="/removeEvent" method="post">
+                              <p class="list-group-item fixme"><button name="RemoveEvent" value="<%= Results.Re[i].id %>">Remove Event</button></p>
+                          </form>
+                          <form class="" action="/UpdateP" method="get">
+                              <p class="list-group-item fixme"><button name="Up" value="<%= Results.Re[i].id %>">Update Event</button></p>
+                          </form>
+                          <br>
+                      </div>
+                  <% } %>
+                </div>
+              </table>
             <% } %>
+
         </div>
     </body>
 </html>
