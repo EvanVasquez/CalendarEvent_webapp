@@ -56,9 +56,18 @@ app.get('/event',function(req,res){
     valDay = req.query.Day;
     Day = parseInt(valDay,10);
     console.log(Day);
-    var some = [valDay,currentPlace];
+    var monTemp = Mon + 1;
+    var q = "SELECT * FROM event WHERE day = " +Day+" AND month ="+monTemp;
+    connection.query(q,function(err,results){
+      var some = [valDay,currentPlace,results];
+      var some = {
+        mon:currentPlace,
+        da: valDay,
+        results:results
+      }
 
-    res.render("eventPage", {some: some});
+      res.render("eventPage", {some: some});
+    });
 });
 
 app.post('/cancel', function(req,res){

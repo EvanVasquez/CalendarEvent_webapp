@@ -3,30 +3,55 @@
     <head>
         <meta charset="utf-8">
         <title></title>
+        <link rel="stylesheet" href="coolbeans.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
     <body>
+      <div class="container">
 
-        <h1>Enter an event for  <%= some[1] %> <%= some[0] %> ,2018 </h1>
+        <h1>Enter an event for  <%= some.mon %> <%= some.da %> ,2018 </h1>
+        <div class="lolol">
+          <form action="/insetEvent" method="post">
+              <label for="title"> Title </label>
+              <input type="text" name="title"  required>
 
-        <form action="/insetEvent" method="post">
-            <label for="title"> Title </label>
-            <input type="text" name="title"  required>
+              <label for="desc"> Description </label>
+              <input type="text" name="desc" required>
 
-            <label for="desc"> Description </label>
-            <input type="text" name="desc" required>
+              <div>
+              </div>
 
-            <label for="start"> Start Time </label>
-            <input type="text" name="start" placeholder="Ex. '5:00pm'" required>
+              <label for="start"> Start Time </label>
+              <input type="text" name="start" placeholder="Ex. '5:00pm'" required>
 
-            <label for="end"> End Time </label>
-            <input type="text" name="end" placeholder="Ex. '6:30pm'" required>
+              <label for="end"> End Time </label>
+              <input type="text" name="end" placeholder="Ex. '6:30pm'" required>
 
-            <button type="submit" name="button"> Submit </button>
-        </form>
-        <form action="/cancel" method="post">
-            <button type="submit" name="button"> Cancel Event </button>
-        </form>
+              <button type="submit" name="button"> Submit </button>
+          </form>
+          <form action="/cancel" method="post">
+              <button type="submit" name="button"> Cancel Event </button>
+          </form>
+        </div>
 
+
+
+        <% for(var i = 0; i < some.results.length; i++){ %>
+            <div class = "col-md-6 col-sm-6">
+                <p class="list-group-item fixme"><strong>Day:</strong> <%= some.results[i].day %></p>
+                <p class="list-group-item fixme"><strong>Title:</strong> <%= some.results[i].title %></p>
+                <p class="list-group-item fixme"><strong>Description:</strong> <%= some.results[i].description %></p>
+                <p class="list-group-item fixme"><strong>Time:</strong> <%= some.results.startTime %> - <%= some.results[i].endTime %> </p>
+                <form class="" action="/removeEvent" method="post">
+                    <p class="list-group-item fixme"><button name="RemoveEvent" value="<%= some.results[i].id %>">Remove Event</button></p>
+                </form>
+                <form class="" action="/UpdateP" method="get">
+                    <p class="list-group-item fixme"><button name="Up" value="<%= some.results[i].id %>">Update Event</button></p>
+                </form>
+                <br>
+            </div>
+        <% } %>
+
+      </div>
     </body>
 </html>
