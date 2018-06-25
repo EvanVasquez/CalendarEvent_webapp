@@ -31,6 +31,8 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <td></td>
+                        <td></td>
                         <td>
                             <form action="/event" method="get">
                                 <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="01"> 1 </button>
@@ -56,19 +58,20 @@
                                 <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="05"> 5 </button>
                             </form>
                         </td>
-                        <td>
-                            <form action="/event" method="get">
-                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="06"> 6 </button>
-                            </form>
-                        </td>
-                        <td>
-                            <form action="/event" method="get">
-                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="07"> 7 </button>
-                            </form>
-                        </td>
+
                     </tr>
 
                     <tr>
+                      <td>
+                          <form action="/event" method="get">
+                              <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="06"> 6 </button>
+                          </form>
+                      </td>
+                      <td>
+                          <form action="/event" method="get">
+                              <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="07"> 7 </button>
+                          </form>
+                      </td>
                         <td>
                             <form action="/event" method="get">
                                 <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="08"> 8 </button>
@@ -94,18 +97,19 @@
                                 <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="12"> 12 </button>
                             </form>
                         </td>
-                        <td>
-                            <form action="/event" method="get">
-                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="13"> 13 </button>
-                            </form>
-                        </td>
-                        <td>
-                            <form action="/event" method="get">
-                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="14"> 14 </button>
-                            </form>
-                        </td>
+
                     </tr>
                     <tr>
+                      <td>
+                          <form action="/event" method="get">
+                              <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="13"> 13 </button>
+                          </form>
+                      </td>
+                      <td>
+                          <form action="/event" method="get">
+                              <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="14"> 14 </button>
+                          </form>
+                      </td>
                         <td>
                             <form action="/event" method="get">
                                 <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="15"> 15 </button>
@@ -131,18 +135,19 @@
                                 <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="19"> 19 </button>
                             </form>
                         </td>
-                        <td>
-                            <form action="/event" method="get">
-                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="20"> 20 </button>
-                            </form>
-                        </td>
-                        <td>
-                            <form action="/event" method="get">
-                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="21"> 21 </button>
-                            </form>
-                        </td>
+
                     </tr>
                     <tr>
+                      <td>
+                          <form action="/event" method="get">
+                              <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="20"> 20 </button>
+                          </form>
+                      </td>
+                      <td>
+                          <form action="/event" method="get">
+                              <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="21"> 21 </button>
+                          </form>
+                      </td>
                         <td>
                             <form action="/event" method="get">
                                 <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="22"> 22 </button>
@@ -169,18 +174,19 @@
                             </form>
                         </td>
 
-                        <td>
-                            <form action="/event" method="get">
-                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="27"> 27 </button>
-                            </form>
-                        </td>
-                        <td>
-                            <form action="/event" method="get">
-                                <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="28"> 28 </button>
-                            </form>
-                        </td>
+
                     </tr>
                     <tr>
+                      <td>
+                          <form action="/event" method="get">
+                              <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="27"> 27 </button>
+                          </form>
+                      </td>
+                      <td>
+                          <form action="/event" method="get">
+                              <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="28"> 28 </button>
+                          </form>
+                      </td>
                         <td>
                             <form action="/event" method="get">
                                 <button class="btn buttons btn-primary-outline" type="submit" name="Day" value="29"> 29 </button>
@@ -206,10 +212,10 @@
                 <div class = "row text-center">
                   <% for(var i = 0; i < Results.Re.length; i++){ %>
                       <div class = "col-md-6 col-sm-6">
-                          <p class="list-group-item fixme"><%= Results.Re[i].day %></p>
-                          <p class="list-group-item fixme"><%= Results.Re[i].title %></p>
-                          <p class="list-group-item fixme"><%= Results.Re[i].description %></p>
-                          <p class="list-group-item fixme"><%= Results.Re[i].startTime %> - <%= Results.Re[i].endTime %> </p>
+                          <p class="list-group-item fixme"><strong>Day:</strong> <%= Results.Re[i].day %></p>
+                          <p class="list-group-item fixme"><strong>Title:</strong> <%= Results.Re[i].title %></p>
+                          <p class="list-group-item fixme"><strong>Description:</strong> <%= Results.Re[i].description %></p>
+                          <p class="list-group-item fixme"><strong>Time:</strong> <%= Results.Re[i].startTime %> - <%= Results.Re[i].endTime %> </p>
                           <form class="" action="/removeEvent" method="post">
                               <p class="list-group-item fixme"><button name="RemoveEvent" value="<%= Results.Re[i].id %>">Remove Event</button></p>
                           </form>

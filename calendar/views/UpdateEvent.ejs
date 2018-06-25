@@ -4,9 +4,11 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="coolbeans.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
   <body>
-    <h1>You made it to the update event page!</h1>
+    <h1>Event Update Page :D</h1>
+    <h3>Please fill out everything to update your event.</h3>
 
     <form action="/Update" method="post">
         <label for="title"> Title </label>
@@ -14,6 +16,9 @@
 
         <label for="desc"> Description </label>
         <input type="text" name="desc" required>
+        <div>
+
+        </div>
 
         <label for="start"> Start Time </label>
         <input type="text" name="start" placeholder="Ex. '5:00pm'" required>
@@ -31,10 +36,10 @@
       <tbody>
         <div class = "row text-center">
               <div class = "col-md-6 col-sm-6">
-                  <li class="list-group-item fixme"><%= Results[0].day %></li>
-                  <li class="list-group-item fixme"><%= Results[0].title %></li>
-                  <li class="list-group-item fixme"><%= Results[0].description %></li>
-                  <li class="list-group-item fixme"><%= Results[0].startTime %> - <%= Results[0].endTime %> </li>
+                  <li class="list-group-item fixme"><strong>Day:</strong><%= Results[0].day %></li>
+                  <li class="list-group-item fixme"><strong>Title:</strong> <%= Results[0].title %></li>
+                  <li class="list-group-item fixme"><strong>Description:</strong> <%= Results[0].description %></li>
+                  <li class="list-group-item fixme"><strong>Time:</strong> <%= Results[0].startTime %> - <%= Results[0].endTime %> </li>
                   <form class="" action="/removeEvent fixme" method="post">
                       <li class="list-group-item fixme"><button name="RemoveEvent" value="<%= Results[0].id %>">Remove Event</button></li>
                   </form>
