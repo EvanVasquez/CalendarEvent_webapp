@@ -3,6 +3,12 @@
     <head>
         <meta charset="utf-8">
         <title></title>
+        <style>
+        .jumbotron{
+          background: #000 url("https://images.unsplash.com/photo-1482731792218-726f33b79659?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c822d1449a76051458e8b5423ada09fc&auto=format&fit=crop&w=1350&q=80") center no-repeat;
+          background-size: cover;
+        }
+        </style>
         <link rel="stylesheet" href="coolbeans.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
@@ -10,7 +16,7 @@
         <div class="container">
             <div class="jumbotron">
                 <h1 class="centerMe"> <%= Results.Month %> </h1>
-                
+
                 <form action="/nextMonth" method="get">
                     <button type="submit" name="button"> Next Month </button>
                 </form>
