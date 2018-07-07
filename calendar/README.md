@@ -17,3 +17,5 @@ By: Evan Vasquez
 5) Have fun with the website!
 
 ==================================================
+
+![](images/Example.PNG)
