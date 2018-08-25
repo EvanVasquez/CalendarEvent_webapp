@@ -19,11 +19,11 @@ var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov"
 var currentPlace = "Jul";
 
 var connection = mysql.createConnection({
-    host: 'den1.mysql4.gear.host',
+    host: '',
     port: 3306,
-    user: 'spotcalendar',
-    password: 'Po03_629Lb3_',
-    database: 'spotcalendar'
+    user: '',
+    password: '',
+    database: ''
 });
 
 
